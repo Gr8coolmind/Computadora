@@ -9,7 +9,13 @@ export default function Footer() {
         <footer className="border-t border-white/10 bg-black/40 pt-16 pb-8">
             <div className="section-padding flex flex-col items-center text-center">
                 <div className="flex gap-6 mb-12">
-                    <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors">
+                    <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors"
+                        aria-label="Repositorio GitHub"
+                    >
                         <Github className="w-5 h-5 text-slate-400" />
                     </a>
                 </div>

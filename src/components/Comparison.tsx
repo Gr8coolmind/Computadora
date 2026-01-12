@@ -63,7 +63,7 @@ function ComparisonCard({ item, index }: { item: (typeof comparisonData)[0], ind
                 {/* BEFORE */}
                 <div className="space-y-3">
                     <div className="flex justify-between text-[10px] font-extrabold tracking-widest text-red-400/80 uppercase">
-                        <span>Antaño</span>
+                        <span>Antes</span>
                     </div>
                     <div className="p-4 bg-red-950/20 border border-red-500/10 rounded-xl relative overflow-hidden">
                         <div className="absolute left-0 top-0 bottom-0 w-1 bg-red-500/50"></div>
