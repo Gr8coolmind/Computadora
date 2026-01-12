@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { timelineData } from '../data';
+import { timelineData } from '../data.tsx';
 import { ChevronRight, X, Cpu, Sparkles } from 'lucide-react';
 import clsx from 'clsx';
 

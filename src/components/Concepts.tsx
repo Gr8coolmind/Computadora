@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { conceptsData } from '../data';
+import { conceptsData } from '../data.tsx';
 import { Lightbulb } from 'lucide-react';
 
 export default function Concepts() {

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { comparisonData } from '../data';
+import { comparisonData } from '../data.tsx';
 import TiltCard from './TiltCard';
 
 export default function Comparison() {
