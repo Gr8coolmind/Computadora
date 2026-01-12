@@ -1,3 +1,7 @@
+import {
+    Settings, Zap, Radio, Cpu, Smartphone, Globe, Rocket,
+    Ruler, Activity, HardDrive, MousePointer2, Network
+} from 'lucide-react';
 
 export const timelineData = [
     {
@@ -13,7 +17,7 @@ export const timelineData = [
             'Sin memoria electrónica'
         ],
         examples: ['Ábaco', 'Pascalina', 'Máquina Analítica (Babbage)', 'Telar de Jacquard'],
-        icon: '⚙️',
+        icon: <Settings className="w-full h-full" />,
         image: '/images/origins.png',
         color: 'from-amber-700 to-orange-900'
     },
@@ -30,7 +34,7 @@ export const timelineData = [
             'Programación en lenguaje máquina'
         ],
         examples: ['ENIAC', 'UNIVAC I', 'IBM 701'],
-        icon: '💡',
+        icon: <Zap className="w-full h-full" />,
         image: '/images/gen1.png',
         color: 'from-orange-600 to-red-900'
     },
@@ -47,7 +51,7 @@ export const timelineData = [
             'Memoria de núcleos magnéticos'
         ],
         examples: ['IBM 1401', 'IBM 7090', 'PDP-1'],
-        icon: '📻',
+        icon: <Radio className="w-full h-full" />,
         image: '/images/gen2.png',
         color: 'from-blue-600 to-slate-800'
     },
@@ -64,7 +68,7 @@ export const timelineData = [
             'Entrada/Salida mediante terminales'
         ],
         examples: ['IBM System/360', 'PDP-8'],
-        icon: '💾',
+        icon: <Cpu className="w-full h-full" />,
         image: '/images/gen3.png',
         color: 'from-cyan-600 to-blue-900'
     },
@@ -81,7 +85,7 @@ export const timelineData = [
             'Portabilidad (Laptops)'
         ],
         examples: ['Intel 4004', 'Apple II', 'IBM PC'],
-        icon: '💻',
+        icon: <Smartphone className="w-full h-full" />,
         image: '/images/gen4.png',
         color: 'from-violet-600 to-indigo-900'
     },
@@ -98,7 +102,7 @@ export const timelineData = [
             'Procesamiento paralelo y Big Data'
         ],
         examples: ['Smartphones', 'Asistentes Virtuales', 'Cloud Computing'],
-        icon: '🌐',
+        icon: <Globe className="w-full h-full" />,
         image: '/images/gen5.png',
         color: 'from-fuchsia-600 to-purple-900'
     },
@@ -115,7 +119,7 @@ export const timelineData = [
             'Ciberseguridad avanzada'
         ],
         examples: ['Computadoras Cuánticas', 'Edge AI', 'Smart Cities'],
-        icon: '🚀',
+        icon: <Rocket className="w-full h-full" />,
         image: '/images/future.png',
         color: 'from-emerald-600 to-teal-900'
     }
@@ -126,31 +130,31 @@ export const comparisonData = [
         category: 'Tamaño',
         before: 'Habitaciones enteras (30 toneladas)',
         after: 'Microscópico / Bolsillo (gramos)',
-        icon: '📏'
+        icon: <Ruler className="w-full h-full" />
     },
     {
         category: 'Velocidad',
         before: 'Miles de instrucciones/seg (KIPS)',
         after: 'Billones de instrucciones/seg (TFLOPS)',
-        icon: '⚡'
+        icon: <Activity className="w-full h-full" />
     },
     {
         category: 'Almacenamiento',
         before: 'Tarjetas perforadas / Cintas (KB)',
         after: 'SSD / Nube (TB/PB)',
-        icon: '💾'
+        icon: <HardDrive className="w-full h-full" />
     },
     {
         category: 'Interacción',
         before: 'Cables manuales / Papel',
         after: 'Táctil / Voz / Gestos / Mental',
-        icon: '👆'
+        icon: <MousePointer2 className="w-full h-full" />
     },
     {
         category: 'Conectividad',
         before: 'Aislada (Standalone)',
         after: 'Hiperconectada (5G/Fibra/Satélite)',
-        icon: '🔗'
+        icon: <Network className="w-full h-full" />
     }
 ];
 

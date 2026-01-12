@@ -70,7 +70,7 @@ export default function Timeline() {
                 </div>
 
                 {/* Central Line (Desktop) - The "Beam" */}
-                <div className="absolute left-4 md:left-1/2 top-40 bottom-20 w-px bg-slate-800 transform md:-translate-x-1/2 z-0 hidden md:block">
+                <div className="absolute left-4 md:left-1/2 top-96 bottom-20 w-px bg-slate-800 transform md:-translate-x-1/2 z-0 hidden md:block">
                     <motion.div
                         style={{ scaleY, originY: 0 }}
                         className="w-full h-full bg-gradient-to-b from-cyan-400 via-violet-500 to-fuchsia-500 shadow-[0_0_20px_rgba(6,182,212,0.8)]"
@@ -205,8 +205,9 @@ function TimelineItem({ item, index, onClick }: { item: (typeof timelineData)[0]
         >
             {/* Timeline Node (The Ring) */}
             <div className="absolute left-4 md:left-1/2 top-8 md:top-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2 flex items-center justify-center z-20 hidden md:flex">
-                <div className="w-4 h-4 rounded-full bg-background border-2 border-slate-700 z-10 group-hover:border-primary transition-colors duration-500">
-                    <div className="absolute inset-0 bg-primary/50 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="w-16 h-16 rounded-full bg-[#0f172a] border-2 border-slate-700 z-10 group-hover:border-primary transition-colors duration-500 flex items-center justify-center p-3 text-slate-300 group-hover:text-primary">
+                    {item.icon}
+                    <div className="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
                 </div>
             </div>
 
