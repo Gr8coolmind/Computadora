@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="section-padding flex flex-col items-center text-center">
                 <div className="flex gap-6 mb-12">
                     <a
-                        href="#"
+                        href="https://github.com/Gr8coolmind/Computadora"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors"
