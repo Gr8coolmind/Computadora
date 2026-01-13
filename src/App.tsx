@@ -5,6 +5,7 @@ import Concepts from './components/Concepts';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
 import InteractiveBackground from './components/InteractiveBackground';
+import ThemeToggle from './components/ThemeToggle';
 
 function App() {
   const scrollToTimeline = () => {
@@ -15,7 +16,8 @@ function App() {
   };
 
   return (
-    <div className="bg-background min-h-screen text-slate-200 selection:bg-cyan-500/30 relative">
+    <div className="bg-background min-h-screen text-slate-200 selection:bg-cyan-500/30 relative transition-colors duration-300">
+      <ThemeToggle />
       <ScrollProgress />
       <InteractiveBackground />
 
@@ -25,6 +27,7 @@ function App() {
         <Comparison />
         <Concepts />
       </main>
+
 
       <Footer />
     </div>

@@ -1,21 +1,62 @@
 @import "tailwindcss";
 
+:root {
+  /* Light Mode (High Contrast) */
+  --bg-primary: #f1f5f9;
+  /* Slate 100 */
+  --bg-surface: rgba(255, 255, 255, 0.85);
+  --text-main: #0f172a;
+  /* Slate 900 */
+  --text-muted: #475569;
+  /* Slate 600 - Darker for readability */
+  --text-on-dark: #f1f5f9;
+  /* For elements that remain dark in light mode */
+
+  --color-primary-val: #0891b2;
+  /* Cyan 600 - Darker for light mode visibility */
+  --color-secondary-val: #7c3aed;
+  /* Violet 600 */
+
+  --border-color: rgba(15, 23, 42, 0.15);
+  /* Stronger border for light mode */
+  --shadow-color: rgba(15, 23, 42, 0.08);
+}
+
+:root.dark {
+  /* Dark Mode */
+  --bg-primary: #020617;
+  /* Slate 950 */
+  --bg-surface: rgba(15, 23, 42, 0.6);
+  --text-main: #e2e8f0;
+  /* Slate 200 */
+  --text-muted: #94a3b8;
+  /* Slate 400 */
+  --text-on-dark: #f1f5f9;
+
+  --color-primary-val: #22d3ee;
+  /* Cyan 400 */
+  --color-secondary-val: #a78bfa;
+  /* Violet 400 */
+
+  --border-color: rgba(255, 255, 255, 0.05);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
 @theme {
-  --color-background: #020617;
-  /* slate-950 */
-  --color-surface: rgba(15, 23, 42, 0.6);
-  /* slate-900/60 */
-  --color-primary: #22d3ee;
-  /* cyan-400 */
-  --color-secondary: #8b5cf6;
-  /* violet-500 */
-  --color-accent: #a78bfa;
-  /* violet-400 for gradients */
+  --color-background: var(--bg-primary);
+  --color-surface: var(--bg-surface);
+  --color-primary: var(--color-primary-val);
+  --color-secondary: var(--color-secondary-val);
+
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-text-on-dark: var(--text-on-dark);
 
   --font-sans: 'Inter', system-ui, sans-serif;
 
   --animate-blob: blob 10s infinite;
   --animate-fade-in: fadeIn 0.5s ease-out forwards;
+  --animate-spin-slow: spin 8s linear infinite;
 
   @keyframes blob {
     0% {
@@ -48,12 +89,8 @@
   }
 }
 
-:root {
-  color-scheme: dark;
-}
-
 body {
-  @apply bg-background text-slate-200 antialiased overflow-x-hidden selection:bg-primary/30 selection:text-cyan-100;
+  @apply bg-background text-text-main antialiased overflow-x-hidden selection:bg-primary/30 selection:text-primary transition-colors duration-300;
   font-family: var(--font-sans);
 }
 
@@ -64,11 +101,11 @@ body {
 
 /* Glassmorphism Utilities */
 .glass {
-  @apply bg-surface backdrop-blur-xl border border-white/5 shadow-2xl;
+  @apply bg-surface backdrop-blur-xl border border-[var(--border-color)] shadow-xl shadow-[var(--shadow-color)];
 }
 
 .glass-card {
-  @apply bg-surface backdrop-blur-xl border border-white/5 shadow-lg rounded-2xl hover:border-white/10 transition-colors duration-300;
+  @apply bg-surface backdrop-blur-xl border border-[var(--border-color)] shadow-lg shadow-[var(--shadow-color)] rounded-2xl hover:border-primary/40 transition-all duration-300;
 }
 
 /* Scrollbar */
@@ -81,12 +118,30 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-800 rounded-full border-2 border-background hover:bg-slate-700 transition-colors;
+  @apply bg-slate-400/30 rounded-full border-2 border-background hover:bg-primary/60 transition-colors;
 }
 
-/* Text Gradients */
+/* Custom Utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-[gradient_3s_linear_infinite];
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Utils */
